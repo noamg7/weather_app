@@ -17,9 +17,6 @@ function home(req, res){
   res.sendFile('/html/index.html', {root: __dirname+'/public'});
 }
 
-function weather(req, res){
-  res.sendFile('/html/weather.html', {root: __dirname+'/public'});
-}
 
 function listenCallback(){
   console.log('Now listening on port ' + server.get('port'));
