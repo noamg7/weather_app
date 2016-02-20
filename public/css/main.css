@@ -1,3 +1,5 @@
-body{
-  background-image: url(http://i.stack.imgur.com/wvNCf.png);
+body {
+  background-image: url("../img/background.png");
+  background-size: cover;
+  color: white;
 }

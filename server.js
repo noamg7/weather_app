@@ -3,11 +3,12 @@ var express = require('express'),
     server  = express();
 
 server.use(express.static(__dirname+'/public'));
+server.use('/images', express.static(__dirname+'/public/img'))
 server.use(logger);
 server.set('port', process.env.PORT || 8080);
 
 server.get('/', home);
-server.get('/weather', weather);
+// server.get('/weather', weather);
 
 
 server.listen(server.get('port'), listenCallback);
@@ -16,7 +17,6 @@ server.listen(server.get('port'), listenCallback);
 function home(req, res){
   res.sendFile('/html/index.html', {root: __dirname+'/public'});
 }
-
 
 function listenCallback(){
   console.log('Now listening on port ' + server.get('port'));
