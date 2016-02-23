@@ -63,19 +63,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
 <script src="js/config.js"></script>
 <script src="js/app.js"></script>
-<script>
-function testTheTemplate(){
-var source = $('#weather_app').html();
-var template = Handlebars.compile(source);
-var data = {
-  city: Gainesville,
-  state: FL,
-};
-
-var html = template(data);
-
-$('#test-output').html(html);
-}
-</script>
 </body>
 </html>
