@@ -24,7 +24,7 @@
     </div>
   </div>
 <script id="info" type="text/x-handlebars-template">
-<div id="app">
+<div>
   <div clas="row">
     <div class="col-md-3">
       <h3>City:</h3>
@@ -51,7 +51,7 @@
   </div>
   <div class="row">
     <div class="col-md-9 col-md-offset-3">
-      <h3>Longitude:{{longitude}}</h3>
+      <h3>Longitude: {{longitude}}</h3>
     </div>
   </div>
   <div clas="row">
@@ -67,7 +67,15 @@
       <h3>Temperature:</h3>
     </div>
     <div class="col-md-9">
-      <h3>{{temperature}}</h3>
+      <h3>{{temperature}}°F</h3>
+    </div>
+  </div>
+  <div clas="row">
+    <div class="col-md-3">
+      <h3>Summary:</h3>
+    </div>
+    <div class="col-md-9">
+      <h3>{{summary}}</h3>
     </div>
   </div>
 </div>

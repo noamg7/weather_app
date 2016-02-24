@@ -5,7 +5,6 @@ $(document).ready(function(){
   $('#weather_app').on('click', google);
 
   function googleUrl(city, state){
-  //  return 'https://api.forecast.io/forecast/6b000884840a1a746b906bb52ba556d4/37.8267,-122.423?units=us?is'
     return locationUrl +city+','+state;
   };
 
@@ -39,6 +38,7 @@ $(document).ready(function(){
   }
 
   function buildUrl(lat, lon){
+    //return 'https://api.forecast.io/forecast/b6e3a9d6cbc211074ff9e60dc7bd71ec/37.8267,-122.423?si';
     return baseUrl + apiKey+'/'+lat+','+lon;
   }
 
@@ -78,6 +78,7 @@ $(document).ready(function(){
       longitude: data.longitude,
       temperature: data.currently.temperature,
       time: data.currently.time,
+      summary: data.currently.icon,
       // btnLink: "javascript:history.go(0)",
       // btnText: "Click to Reload",
     };

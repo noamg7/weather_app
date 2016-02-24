@@ -1,8 +1,5 @@
 body {
   background-image: url("../img/weather.jpg");
   background-size: cover;
-  color: white;
-}
-#app{
-  color: 	black;
+  color: black;
 }
