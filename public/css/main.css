@@ -1,5 +1,9 @@
 body {
-  background-image: url("../img/weather.jpg");
+  background-image: url("../img/G2011_plume.gif");
   background-size: cover;
   color: black;
+}
+div#animai{
+  font-family: sans-serif;
+  color: #000066;
 }
