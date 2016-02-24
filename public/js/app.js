@@ -5,6 +5,7 @@ $(document).ready(function(){
   $('#weather_app').on('click', google);
 
   function googleUrl(city, state){
+  //  return 'https://api.forecast.io/forecast/6b000884840a1a746b906bb52ba556d4/37.8267,-122.423?units=us?is'
     return locationUrl +city+','+state;
   };
 

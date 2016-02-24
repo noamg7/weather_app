@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-
   <div class="container">
     <div class="row">
       <div class="form-group">
@@ -25,20 +24,20 @@
     </div>
   </div>
 <script id="info" type="text/x-handlebars-template">
-<div>
+<div id="app">
   <div clas="row">
     <div class="col-md-3">
       <h3>City:</h3>
     </div>
-    <div class="col-md-2">
+  <div class="col-md-9">
       <h3>{{city}}</h3>
-    </div>
+  </div>
   </div>
   <div clas="row">
     <div class="col-md-3">
       <h3>State:</h3>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-9">
       <h3>{{state}}</h3>
     </div>
   </div>
@@ -46,18 +45,20 @@
     <div class="col-md-3">
       <h3>Position:</h3>
     </div>
-    <div class="col-md-3">
-      <h3>{{longitude}}</h3>
-    </div>
-    <div class="col-md-3">
-      <h3>{{latitude}}</h3>
+    <div class="col-md-9">
+      <h3>Latitude: {{latitude}}</h3>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-3">
-      <h3>Time</h3>
+    <div class="col-md-9 col-md-offset-3">
+      <h3>Longitude:{{longitude}}</h3>
     </div>
+  </div>
+  <div clas="row">
     <div class="col-md-3">
+      <h3>Time:</h3>
+    </div>
+    <div class="col-md-9">
       <h3>{{time}}</h3>
     </div>
   </div>
@@ -65,7 +66,7 @@
     <div class="col-md-3">
       <h3>Temperature:</h3>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-9">
       <h3>{{temperature}}</h3>
     </div>
   </div>
