@@ -6,7 +6,6 @@ $(document).ready(function(){
 
   function googleUrl(city, state){
     return locationUrl +city+','+state;
-    console.log(this);
   };
 
   function google(){
@@ -25,9 +24,17 @@ $(document).ready(function(){
 
   function googleSuccess(google){
     console.log(google);
-    var lat = google.result[0].geometry.location.lat;
-    var lon = google.result[0].geometry.location.lon;
-    showInfo(lat, lon);
+    locationData.city = google.results[0].address_components[0].short_name;
+    locationData.state = google.results[0].address_components[2].long_name;
+    var lat = google.results[0].geometry.location.lat;
+    var lon = google.results[0].geometry.location.lng;
+    var ajaxOptions= {
+      url: buildUrl(lat, lon),
+      dataType: 'jsonp',
+      success: showInfoSuccess,
+      error: errorHandler,
+    };
+     $.ajax(ajaxOptions);
   }
 
   function buildUrl(lat, lon){
@@ -36,15 +43,6 @@ $(document).ready(function(){
 
   function errorHandler(err){
     console.log(err);
-  }
-  function showInfo(lat, lon) {
-    var ajaxOptions= {
-      url: buildUrl(lat, lon),
-      dataType: 'jsnop',
-      success: showInfoSuccess,
-      error: errorHandler,
-    };
-    $.ajax(ajaxOptions);
   }
 
   function showInfo(city, state){
@@ -68,19 +66,21 @@ $(document).ready(function(){
 
   function showInfoSuccess(data){
     console.log(data);
+    console.log(locationData.city);
     var source = $('#info').html();
     var template = Handlebars.compile(source);
-    var data = data.currently;
+    //var data = data.currently;
     var extractedData = {
-      city: data.city,
-      state: data.state,
-      latitude: google.result[0].geometry.location.lat,
-      longitude: google.result[0].geometry.location.lon,
-      time: data.time,
-      btnLink: "javascript:history.go(0)",
-      btnText: "Click to Reload",
+      city: locationData.city,
+      state: locationData.state,
+      latitude: data.latitude,
+      longitude: data.longitude,
+      temperature: data.currently.temperature,
+      time: data.currently.time,
+      // btnLink: "javascript:history.go(0)",
+      // btnText: "Click to Reload",
     };
     var html = template(extractedData);
-    $('#test-output').html(html);
+    $('#output').html(html);
   }
 });
